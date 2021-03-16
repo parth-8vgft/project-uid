@@ -1,0 +1,51 @@
+Distributed Version Control System (management)tools :- 
+1. git
+2. apache (subversion) aka svn
+3. cvs
+4. mercurial
+
+	GIT Commands
+
+Create Repo :-
+1. git init :- to initialized your .git folder inside your project
+
+	Sync Repo :-
+
+2. git remote add origin "Link of Github clone/download section" :- for sync your project with central repo
+3. git pull origin master / git pull origin main :- to pull out your project files from central repo -> your local repo
+4. git push origin master / git push origin main :- to push changes from local repo -> central repo 
+
+	Make Change To repo :-
+
+5. git status  - gives you status of which files are in index or not.
+6. git add "YourFileName" or git add (-A) &/ (--a)  :-  to add all file to index.
+ 
+		Before Commit Set   [   Author identity unknown
+
+					Please tell me who you are. RUN
+
+  					git config --global user.email "you@example.com"
+  					git config --global user.name "Your Name"
+
+					to set your account's default identity.
+					Omit --global to set the identity only in this repository.
+				    ]
+
+7. git commit -m(create a message) "YourMessage"  &/ git commit -a(To add all commits) -m(create a message) :- to add files from index to local repo
+8. git log :- to see logs of commits by whom
+
+	Parallel Development :- 
+
+* Topic - Branching
+9. git branch YourFirstBranchName :- to create a branch besides master
+10. git checkout YourBranchName :- to check/changeto a branch from master -> your branch
+11. ls :- to check files in branch/master
+
+* Topic - Merging
+12. git merge YourBranchNameWhichYouWantToMergeIntoMaster  :- (Caution - Before You merge your branch You Need To CHECHOUT your MASTER BRANCH then MERGE your FirstBranch to Master )
+
+* Topic - Rebaseing
+13. git rebase FirstBase (while in master)&/ git rebase master (while in FirstBranch) :- merge in linear way, Firstbranch on top of master
+
+	Revert Changes :-
+14. git checkout First8DigitOfCommitHashValue NameOfYourFile  :- To revert back to changes
